@@ -28,11 +28,13 @@ const UserComponent = () => {
             });
             setUsers(response.data.items);
             setTotalPages(Math.ceil(response.data.total_count / 10));
-        } catch (error: any) {
-            if (error.response && error.response.status === 403) {
-                toast.error("API rate limit exceeded \n Please try again later.");
-            } else {
-                toast.error("Error fetching users \n Please try again.");
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error)) {
+                if (error.response && error.response.status === 403) {
+                    toast.error("API rate limit exceeded \n Please try again later.");
+                } else {
+                    toast.error("Error fetching users \n Please try again.");
+                }
             }
         }
     }, [query, page]);

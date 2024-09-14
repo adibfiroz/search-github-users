@@ -1,4 +1,5 @@
-[`Demo`]: [`https://search-github-account.vercel.app/`](https://search-github-account.vercel.app/)
+## Demo
+[`https://search-github-account.vercel.app`](https://search-github-account.vercel.app/)
 
 ## Getting Started
 
